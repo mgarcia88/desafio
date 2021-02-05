@@ -33,24 +33,24 @@ const extractSize = htmlTemplate => {
 	let widthValue = 0;
 
 	if (widthPosition > 0 && heightPosition > 0) {
-					widthPosition += 7;
-					heightPosition += 8;
+		widthPosition += 7;
+		heightPosition += 8;
 
-					let finalPosition = htmlTemplate.substr(heightPosition).indexOf('"');
-					heightValue = htmlTemplate.substr(heightPosition, finalPosition);
-					
-					finalPosition = htmlTemplate.substr(widthPosition).indexOf(";");
-					widthValue = htmlTemplate.substr(widthPosition, finalPosition);
+		let finalPosition = htmlTemplate.substr(heightPosition).indexOf('"');
+		heightValue = htmlTemplate.substr(heightPosition, finalPosition);
 
-					return {
-									width: parseInt(widthValue.replace('%', '').replace("px", "")),
-									height: parseInt(heightValue.replace('%','').replace("px",""))
-					};
+		finalPosition = htmlTemplate.substr(widthPosition).indexOf(";");
+		widthValue = htmlTemplate.substr(widthPosition, finalPosition);
+
+		return {
+			width: parseInt(widthValue.replace('%', '').replace("px", "")),
+			height: parseInt(heightValue.replace('%', '').replace("px", ""))
+		};
 	}
 
 	return {
-					width: 0,
-					height: 0
+		width: 0,
+		height: 0
 	}
 }
 

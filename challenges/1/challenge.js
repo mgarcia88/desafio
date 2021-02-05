@@ -18,17 +18,17 @@
  */
 
 const MDC = (a, b) => {
-	if (b == 0){
-					return a;
+	if (b == 0) {
+		return a;
 	}
 
 	var resto;
 
 	do {
-					resto = a % b;
+		resto = a % b;
 
-					a = b;
-					b = resto;
+		a = b;
+		b = resto;
 
 	} while (resto != 0);
 

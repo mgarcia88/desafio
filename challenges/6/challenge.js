@@ -51,40 +51,40 @@ const combinate = (set, target) => {
 	var auxElement = 0;
 
 	set.forEach(element => {
-					if (element == target) {
-									result.push([element]);
-					}
+		if (element == target) {
+			result.push([element]);
+		}
 
-					if (target % element == 0) {
-									let totalElements = (target / element);
+		if (target % element == 0) {
+			let totalElements = (target / element);
 
-									if (totalElements > 1) {
-													let elementCombinate = [];
-													for (let i = 0; i < totalElements; i++) {
-																	elementCombinate.push(element);
-													}
+			if (totalElements > 1) {
+				let elementCombinate = [];
+				for (let i = 0; i < totalElements; i++) {
+					elementCombinate.push(element);
+				}
 
-													result.push(elementCombinate);
-									}
-					}
-					else {
-									if (auxElement > 0 && target - (auxElement + element) > 0){
-											let teste = target - (auxElement + element);
+				result.push(elementCombinate);
+			}
+		}
+		else {
+			if (auxElement > 0 && target - (auxElement + element) > 0) {
+				let teste = target - (auxElement + element);
 
-											const found = set.find(element => element == teste); 
+				const found = set.find(element => element == teste);
 
-											if (found > 0){
-															result.push([auxElement, found, element]);
-											}
-								}
-					}
+				if (found > 0) {
+					result.push([auxElement, found, element]);
+				}
+			}
+		}
 
-					if ((auxElement + element) == target){
-									result.push([auxElement, element]);
-					}
+		if ((auxElement + element) == target) {
+			result.push([auxElement, element]);
+		}
 
-					auxElement = element;
-					
+		auxElement = element;
+
 	});
 	return result;
 }

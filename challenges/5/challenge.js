@@ -9,26 +9,26 @@
  * 
  * 
  *  {
-        currentPage: 1,
-        perPage: 10,
-        total: 20,
-        totalPages: 2,
-        data: [
-            {
-                userId: 1,
-                id: 1,
-                title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-                body: "quia et suscipit\nsuscipit recusandae consequuntur (...)"
-            },
-            [...]
-        ]
-    }
+		currentPage: 1,
+		perPage: 10,
+		total: 20,
+		totalPages: 2,
+		data: [
+			{
+				userId: 1,
+				id: 1,
+				title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+				body: "quia et suscipit\nsuscipit recusandae consequuntur (...)"
+			},
+			[...]
+		]
+	}
  */
 
 const posts = require('./posts.json')
 
 const paginate = (pageNumber, itemsPerPage) => {
-	if (itemsPerPage == null && typeof(pageNumber) == "object") {
+	if (itemsPerPage == null && typeof (pageNumber) == "object") {
 		return {
 			currentPage: 1,
 			perPage: 10,
