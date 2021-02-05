@@ -38,7 +38,7 @@ const paginate = (pageNumber, itemsPerPage) => {
 		}
 	}
 
-	if (isNaN(parseInt(itemsPerPage))) { console.log('oi'); throw /Expect int and got string/ }
+	if (isNaN(parseInt(itemsPerPage))) { throw /Expect int and got string/ }
 
 	if (pageNumber == null || pageNumber == undefined) pageNumber = 1;
 
